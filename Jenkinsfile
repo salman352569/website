@@ -25,14 +25,11 @@ pipeline {
 
         }
            stage('Production') {
-            when {
-                branch 'master'
-            }
 
-            steps {
-                sh 'docker rm -f prod || true'
-                sh 'docker run -d --name prod -p 5000:80 website'
-            }
-        }
+                steps {
+                   sh 'docker rm -f prod || true'
+                   sh 'docker run -d --name prod -p 5000:80 website'
+            
+        
     }
 }
